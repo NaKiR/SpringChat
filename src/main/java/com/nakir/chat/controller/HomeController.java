@@ -20,10 +20,5 @@ public class HomeController {
         model.put("chatHistory", chatHistory.toString());
         return "home";
     }
-
-    @RequestMapping(value="/reg", method=RequestMethod.GET)
-    public String register() {
-        return "redirect:/";
-    }
 }
 

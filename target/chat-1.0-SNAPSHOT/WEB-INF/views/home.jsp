@@ -3,14 +3,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-<html>
-<head>
-    <title>Chat - Spring MVC + Hibernate + JQuery</title>
-</head>
-
-<body>
 <div id="chat">
     ${chatHistory}
 </div>
-</body>
-</html>
+<br />
+<sf:form id="chatMessageSubmitForm" >
+    <textarea id="chatMessage" name="chatMessage" rows="1" cols="50"></textarea>
+    <br />
+    <input type="button" name="postMessage" id="postMessage" value="Post Message">
+</sf:form>
