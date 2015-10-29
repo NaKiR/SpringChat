@@ -27,7 +27,7 @@
         <property name="dataSource" ref="dataSource" />
         <property name="annotatedClasses">
             <list>
-                <!--<value>com.nakir.chat.domain.User</value>-->
+                <value>com.nakir.chat.domain.User</value>
                 <value>com.nakir.chat.domain.Message</value>
             </list>
         </property>

@@ -1,0 +1,13 @@
+package com.nakir.chat.dao;
+
+import com.nakir.chat.domain.User;
+
+import java.util.List;
+
+public interface UserDao {
+    public User getUser(Long userId);
+    public User save(User user);
+    public List<User> getAllUsers();
+    public void delete(Long userId);
+    public User findUserByNick(String nick);
+}

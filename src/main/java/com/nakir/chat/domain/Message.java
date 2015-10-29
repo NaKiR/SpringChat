@@ -20,12 +20,17 @@ public class Message {
     @Column(name="message")
     private String message;
 
+    @ManyToOne
+    @JoinColumn(name="author_id")
+    private User author;
+
     public Message() {
 
     }
 
-    public Message(String message) {
+    public Message(String message, User author) {
         this.message = message;
+        this.author = author;
     }
 
     public Long getId() {
@@ -43,5 +48,13 @@ public class Message {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
+    }
+
+    public User getAuthor() {
+        return this.author;
     }
 }
