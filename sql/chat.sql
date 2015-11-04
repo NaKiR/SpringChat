@@ -28,7 +28,6 @@ CREATE TABLE `messages` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `author_id` int(10) unsigned NOT NULL,
   `message` text NOT NULL,
-  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `fk_Messages_User` (`author_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=304 DEFAULT CHARSET=latin1;
@@ -40,7 +39,7 @@ CREATE TABLE `messages` (
 
 LOCK TABLES `messages` WRITE;
 /*!40000 ALTER TABLE `messages` DISABLE KEYS */;
-INSERT INTO `messages` VALUES (1,4,'odin','2013-01-05 21:24:37'),(2,3,'dva','2013-01-05 21:24:37'),(3,7,'3','2013-01-05 21:24:37'),(4,2,'4','2013-01-05 21:24:37'),(5,4,'5','2013-01-05 21:24:37'),(6,4,'shest','2013-01-05 21:24:37');
+INSERT INTO `messages` VALUES (1,4,'odin'),(2,3,'dva'),(3,7,'3'),(4,2,'4'),(5,4,'5'),(6,4,'shest');
 /*!40000 ALTER TABLE `messages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -53,9 +52,6 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `firstname` varchar(15) DEFAULT NULL,
-  `middlename` varchar(15) DEFAULT NULL,
-  `lastname` varchar(15) DEFAULT NULL,
   `nick` varchar(15) NOT NULL,
   `email` varchar(30) NOT NULL,
   `password` varchar(20) NOT NULL,
@@ -70,7 +66,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'George',NULL,'Washington','gwashington','gwashington@us.gov','1234567'),(2,'John',NULL,'Adams','jadams','jadams@us.gov','89012345'),(3,'Thomas',NULL,'Jefferson','tjefferson','tjefferson@us.gov','77777777'),(4,'James',NULL,'Madison','jmadison','jmadison@us.gov','77777777'),(5,'James',NULL,'Monroe','jmonroe','jmonroe@us.gov','77777777'),(6,'John','Quincy','Adams','jqadams','jmonroe@us.gov','77777777'),(7,'Andrew',NULL,'Jackson','ajackson','ajackson@us.gov','77777777');
+INSERT INTO `user` VALUES (1,'gwashington','gwashington@us.gov','1234567'),(2,'jadams','jadams@us.gov','89012345'),(3,'tjefferson','tjefferson@us.gov','77777777'),(4,'jmadison','jmadison@us.gov','77777777'),(5,'jmonroe','jmonroe@us.gov','77777777'),(6,'jqadams','jmonroe@us.gov','77777777'),(7,'ajackson','ajackson@us.gov','77777777');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

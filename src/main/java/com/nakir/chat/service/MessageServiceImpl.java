@@ -33,7 +33,8 @@ public class MessageServiceImpl implements MessageService {
         List<Message> messages = getRecentMessages();
 
         for (Message m : messages ) {
-            chatHistory.append(String.format("<b>%s</b>: %s<br />",
+            chatHistory.append(String.format("<a href=\"/profile/view/%s\"><b>%s</b></a>: %s<br />",
+                    m.getAuthor().getId(),
                     m.getAuthor().getNick(),
                     m.getMessage()));
         }

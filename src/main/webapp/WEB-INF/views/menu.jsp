@@ -4,13 +4,16 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<a href="/home">Spring Chat</a>
+<a href="/">Spring Chat</a>
 <c:choose>
-    <c:when test="${page == 'home'}">
-        <h5>You're logged in as ${user.nick}</h5>
+    <c:when test="${page == 'home' || page == 'profile'}">
+        <h5>You're logged in as <a href="/profile/view/${user.id}">${user.nick}</a></h5>
         <ul id="tools">
             <li>
                 <a href="/">Home</a>;
+            </li>
+            <li>
+                <a href="/profile/view/${user.id}">My profile</a>
             </li>
             <li>
                 <a href="/login">Change User</a>;
@@ -18,7 +21,7 @@
             <li>
                 <a href="<c:url value="/logout" />" >Logout</a>
             </li>
-            </ul>
+        </ul>
     </c:when>
 </c:choose>
 <br />

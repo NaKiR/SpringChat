@@ -1,5 +1,7 @@
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 
+<h2 id="title"><a href="/login">Sign in</a> to Chat or register</h2>
+<br />
 <sf:form method="POST" modelAttribute="user">
     <fieldset>
         <sf:errors cssClass="error" />
