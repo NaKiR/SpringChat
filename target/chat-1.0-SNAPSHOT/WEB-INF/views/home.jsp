@@ -3,9 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-<div id="chat">
-    ${chatHistory}
-</div>
+${chatHistory}
 <br />
 <sf:form id="chatMessageSubmitForm" >
     <textarea id="chatMessage" name="chatMessage" rows="1" cols="50"></textarea>

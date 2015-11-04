@@ -1,8 +1,10 @@
 package com.nakir.chat.controller;
 
+import com.nakir.chat.domain.User;
 import com.nakir.chat.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,5 +29,11 @@ public class LoginController {
     @RequestMapping(value="/logout", method = RequestMethod.GET)
     public String logout(ModelMap model) {
         return "redirect:/j_spring_security_logout";
+    }
+
+    @RequestMapping(value="/register", method=RequestMethod.GET)
+    public String register(Model model) {
+        model.addAttribute(new User());
+        return "redirect:/profile/new";
     }
 }

@@ -53,9 +53,9 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `firstname` varchar(15) NOT NULL,
+  `firstname` varchar(15) DEFAULT NULL,
   `middlename` varchar(15) DEFAULT NULL,
-  `lastname` varchar(15) NOT NULL,
+  `lastname` varchar(15) DEFAULT NULL,
   `nick` varchar(15) NOT NULL,
   `email` varchar(30) NOT NULL,
   `password` varchar(20) NOT NULL,

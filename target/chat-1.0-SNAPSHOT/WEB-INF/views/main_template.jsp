@@ -6,14 +6,7 @@
     </head>
 
     <body>
-    <div id="container">
-        <div id="top">
-            <t:insertAttribute name="top" />
-        </div>
-
-        <div id="main">
-            <t:insertAttribute name="content" />
-        </div>
-    </div>
+        <t:insertAttribute name="top" />
+        <t:insertAttribute name="content" />
     </body>
 </html>

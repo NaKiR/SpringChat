@@ -1,8 +1,6 @@
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<div>
-   <h2 id="title">Sign in to Chat</h2>
-
+   <h2 id="title"><a href="/login">Sign in</a> to Chat or <a href="/register">register</a></h2>
     <c:if test="${loginfailed}">
         <span class="loginFailed">
             Your login attempt was not successful, try again.<br />
@@ -39,4 +37,3 @@
    <%--<script type="text/javascript">--%>
      <%--document.getElementById('username_or_email').focus();--%>
    <%--</script>--%>
-</div>

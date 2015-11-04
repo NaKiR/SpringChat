@@ -34,7 +34,7 @@ public class ProfileController {
     public String showRegistrationForm(Map<String, Object> model) {
         model.put("user", new User());
         model.put("page", "register");
-        return "profile/createProfile";
+        return "register";
     }
 
     @RequestMapping(value="/profile/new", method=RequestMethod.POST)
