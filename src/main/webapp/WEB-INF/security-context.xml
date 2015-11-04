@@ -14,7 +14,7 @@
 
               <form-login login-page="/login" default-target-url="/home"
                           authentication-failure-url="/loginfailed" />
-              <logout logout-success-url="/logout" />
+              <logout logout-success-url="/login" />
        </http>
 
        <jdbc-user-service id="securityUserService"

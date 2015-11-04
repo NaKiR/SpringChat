@@ -9,29 +9,14 @@
     <br />
     <c:choose>
         <c:when test="${page == 'home'}">
-
-            <c:if test="${authenticated == true}">
                 <ul id="tools">
                     <li>
                         <a href="/home">Home</a>;
                         <a href="/login">Change User</a>;
-                        <a href="<c:url value="j_spring_security_logout" />" >Logout</a>
+                        <a href="<c:url value="/logout" />" >Logout</a>
                     </li>
                 </ul>
                 <div id="title"><h2>You're logged in as ${user.nick}</h2></div>
-            </c:if>
-
-            <c:if test="${authenticated == false}">
-                <ul id="tools">
-                    <li>
-                        <a href="/home">Home</a>;
-                        <a href="/login">Login</a>;
-                        <a href="/register">Register</a>
-                    </li>
-                </ul>
-                <div id="title"><h2>You're not logged in. Please <a href="/login">login</a> or <a href="/register">register</a></h2></div>
-            </c:if>
-            </ul>
         </c:when>
     </c:choose>
     <br />
