@@ -9,4 +9,9 @@
         <put-attribute name="content" value="/WEB-INF/views/profile/viewProfile.jsp"/>
     </definition>
 
+    <definition name="profile/editProfile" extends="template">
+        <put-attribute name="top" value="/WEB-INF/views/menu.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/views/profile/editProfile.jsp"/>
+    </definition>
+
 </tiles-definitions>

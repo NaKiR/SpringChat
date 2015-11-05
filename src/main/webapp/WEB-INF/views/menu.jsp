@@ -13,7 +13,7 @@
                 <a href="/">Home</a>;
             </li>
             <li>
-                <a href="/profile/view/${user.id}">My profile</a>
+                <a href="/profile/edit/${user.id}">Edit profile</a>
             </li>
             <li>
                 <a href="/login">Change User</a>;

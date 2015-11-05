@@ -44,6 +44,28 @@ public class ProfileController {
         return createOrUpdateUser(user, bindingResult, true);
     }
 
+    @RequestMapping(value="/profile/edit/{id}", method=RequestMethod.POST)
+    public String saveUserProfile(User user,
+                                  BindingResult bindingResult) {
+        return createOrUpdateUser(user, bindingResult, false);
+    }
+
+    @RequestMapping(value="/profile/edit/{id}", method=RequestMethod.GET)
+    public String editUserProfile(@PathVariable("id") long id,
+                                  ModelMap model) {
+        User requestedUser = userService.getUser(id);
+        if (requestedUser == null) {
+            throw new RuntimeException();
+        }
+        User currentUser = getCurrentUser();
+        if (!currentUser.getId().equals(requestedUser.getId())) {
+            throw new RuntimeException();
+        }
+        model.put("user", requestedUser);
+        model.put("page", "profile");
+        return "profile/editProfile";
+    }
+
     private String createOrUpdateUser(User user,
                                       BindingResult bindingResult,
                                       Boolean create) {
