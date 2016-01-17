@@ -12,8 +12,13 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserDao userDao;
+
+    @Autowired
+    private EmailService emailService;
+
     public void addUser(User user) {
         saveUser(user, true);
+        emailService.sendEmail(user.getEmail(), "Nick: " + user.getEmail() + "\nPassword: " + user.getPassword());
     }
 
     public User getUser(Long userId) {
